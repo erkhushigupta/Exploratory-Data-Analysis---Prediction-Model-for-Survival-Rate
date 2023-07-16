@@ -28,5 +28,49 @@ It's time to read in our training and testing data using `pd.read_csv`, and take
 
 ![image](https://github.com/erkhushigupta/Exploratory-Data-Analysis---Prediction-Model-for-Survival-Rate/assets/139675402/d14d3eb0-dded-4281-aaf3-d9d9078bb318)
 
+## 3) Data Analysis
+We're going to consider the features in the dataset and how complete they are. 
 
+Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
+       'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],
+      dtype='object')
+      
+![image](https://github.com/erkhushigupta/Exploratory-Data-Analysis---Prediction-Model-for-Survival-Rate/assets/139675402/3e1100ec-8188-4c20-a454-0352fcdb49ac)
 
+* **Numerical Features:** Age (Continuous), Fare (Continuous), SibSp (Discrete), Parch (Discrete)
+* **Categorical Features:** Survived, Sex, Embarked, Pclass
+* **Alphanumeric Features:** Ticket, Cabin
+
+#### What are the data types for each feature?
+* Survived: int
+* Pclass: int
+* Name: string
+* Sex: string
+* Age: float
+* SibSp: int
+* Parch: int
+* Ticket: string
+* Fare: float
+* Cabin: string
+* Embarked: string
+
+Now that we have an idea of what kinds of features we're working with, we can see how much information we have about each of them.
+#### Some Observations:
+* There are a total of 891 passengers in our training set.
+* The Age feature is missing approximately 19.8% of its values. I'm guessing that the Age feature is pretty important to survival, so we should probably attempt to fill these gaps. 
+* The Cabin feature is missing approximately 77.1% of its values. Since so much of the feature is missing, it would be hard to fill in the missing values. We'll probably drop these values from our dataset.
+* The Embarked feature is missing 0.22% of its values, which should be relatively harmless.
+
+PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age            177
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          687
+Embarked         2
+dtype: int64
